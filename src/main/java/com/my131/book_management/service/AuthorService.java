@@ -34,7 +34,9 @@ public class AuthorService {
     //지정된 ID의 Author 정보를 수정함
     //수정 후 갱신된 Author 객체 반환
     public Author update(Integer id, Author updatedAuthor) {
-        return authorRepository.update(id, updatedAuthor);
+        getById(id);
+        updatedAuthor.setId(id);
+        return authorRepository.save(updatedAuthor);
     }
 
     //지정된 ID에 해당하는 Author 데이터를 삭제

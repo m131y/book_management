@@ -36,19 +36,19 @@ public class AuthorRepository {
         return author;
     }
 
-    //지정된 ID에 해당하는 Author 객체를 updatedAuthor의 정보로 업데이트
-    public Author update(Integer id, Author updatedAuthor) {
-        //해당 ID가 존재하지 않으면 NoSuchElementException으로 예외 발생
-        if(!store.containsKey(id)) {
-            throw new NoSuchElementException(id + "의 저자가 없습니다.");
-        }
-        //업데이트할 객체에 기존 ID를 설정합니다. (중복 방지)
-        updatedAuthor.setId(id);
-        //기존 ID 위치에 새로운 author 객체를 덮어씌움.
-        store.put(id, updatedAuthor);
-        //업데이트된 author 객체를 반환
-        return updatedAuthor;
-    }
+//    //지정된 ID에 해당하는 Author 객체를 updatedAuthor의 정보로 업데이트
+//    public Author update(Integer id, Author updatedAuthor) {
+//        //해당 ID가 존재하지 않으면 NoSuchElementException으로 예외 발생
+//        if(!store.containsKey(id)) {
+//            throw new NoSuchElementException(id + "의 저자가 없습니다.");
+//        }
+//        //업데이트할 객체에 기존 ID를 설정합니다. (중복 방지)
+//        updatedAuthor.setId(id);
+//        //기존 ID 위치에 새로운 author 객체를 덮어씌움.
+//        store.put(id, updatedAuthor);
+//        //업데이트된 author 객체를 반환
+//        return updatedAuthor;
+//    }
     //지정된 ID에 해당하는 Author 객체를 저장소에서 삭제, 삭제는 반환X(void)
     public void delete(Integer id) {
         //Map store에서 해당 ID를 제거
