@@ -8,7 +8,9 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 @Repository
 public class AuthorRepository {
+    //Author 객체를 저장할 메모리 기반의 저장소. LinkedHashMap을 사용함으로써 삽입 순서 유지
     private final Map<Integer, Author> store = new LinkedHashMap<>();
+    //ID 생성을 위한 카운터. 멀티스레드 환경에서도 안전하게 증가하는 ID를 만들 수 있게 도와주는 객체
     private final AtomicInteger seq = new AtomicInteger(0);
 
     //store Map의 값을 list<Author>로 반환시킴,
